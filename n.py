@@ -21,6 +21,7 @@ while True:
             
             if selected == "Сканировать URL":
                 print("asdasd")
+                input()
             elif selected == "Проверка с использованием VirusTotal":
                 print("asdasd")
             elif selected == "Выход":
