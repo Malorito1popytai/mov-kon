@@ -6,10 +6,10 @@ from rich.text import Text
 from rich.panel import Panel
 from rich.table import Table
 import random
-
+import os
 
 console = Console()
-
+user = os.getenv('VAR2')
 word = ["good", "beautiful", "productive", "busy", "warm", "cheerful", "chill"]
 current_time = datetime.now()
 hours = current_time.hour
