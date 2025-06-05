@@ -42,7 +42,9 @@ def temperature():
 data = hello_weather()
 
 def main_weather():
-    hello_weather()
-    console.print(f"\n[bold cyan]Детальный статус: [/bold cyan][bold magenta]{data['weather'][0]['description']}[/bold magenta]")
-    humidity1()
-    temperature()
+    with console.status("search..", spinner="dots"):
+        time.sleep(1.5)
+        hello_weather()
+        console.print(f"\n[bold cyan]Детальный статус: [/bold cyan][bold magenta]{data['weather'][0]['description']}[/bold magenta]")
+        humidity1()
+        temperature()

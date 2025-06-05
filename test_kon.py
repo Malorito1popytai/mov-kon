@@ -1,4 +1,3 @@
-
 import os
 import time
 
@@ -24,6 +23,7 @@ while True:
                 input()
             elif selected == "Проверка с использованием VirusTotal":
                 print("asdasd")
+                input
             elif selected == "Выход":
                 print("Выход из программы")
                 time.sleep(0.5)

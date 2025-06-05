@@ -13,7 +13,6 @@ console = Console()
 
 current_time = datetime.now()
 hours = current_time.hour
-
 pas = os.getenv('VAR1')
 user = os.getenv('VAR2')
 
