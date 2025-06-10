@@ -24,3 +24,5 @@ __pycache__
 
 #Secrets
 .env
+.obsidian/
+.obsidian/workspace.json

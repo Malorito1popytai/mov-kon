@@ -1,5 +1,9 @@
 from mov_kon import *
 from datetime import datetime, time
+from simple_term_menu import TerminalMenu
+from rich.panel import Panel
+from rich.table import Table
+from rich.console import Console
 import time
 
 
@@ -8,34 +12,23 @@ hours = current_time.hour
 options = ["Погода сегодня", "Музыка", "Выход"]
 
 def main():
-    while True:    
-        for i, option in enumerate(options, 1):
-            print(f"{i}. {option}")
-
-        choice = input(f"Выберите действие (1-{len(options)}): ").strip()
-        
-        if choice.isdigit() and 1 <= int(choice) <= len(options):
-            choice = int(choice)
-            selected = options[choice - 1]
-            
-            if selected == "Погода сегодня":
-                clean_screen()
-                time.sleep(0.5)
-                main_weather()
-                input("\nНажмите Enter для продолжения...")
-                clean_screen()
-                hello_time(hours)
-            elif selected == "Музыка":
-                print("asdasd")
-                input()
-            elif selected == "Выход":
-                print("Выход из программы")
-                time.sleep(0.5)
-                break
-        else:
+    while True:
+        terminal_menu = TerminalMenu(options)
+        menu_entry_index = terminal_menu.show()
+        if menu_entry_index == 0:
             clean_screen()
-            print("Неверный выбор! Попробуйте снова.")
+            time.sleep(0.5)
+            main_weather()
             input("\nНажмите Enter для продолжения...")
+            clean_screen()
+            hello_time(hours)
+        elif menu_entry_index == 1:
+            print("asdasd")
+            input()
+        elif menu_entry_index == 2:
+            print("\nВыход из программы")
+            time.sleep(0.5)
+            break
 
 if __name__ == '__main__':
     log_main()

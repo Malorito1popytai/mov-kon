@@ -3,6 +3,7 @@ from rich.console import Console
 from rich.text import Text
 import requests
 import os
+import time
 
 load_dotenv()
 console = Console()

@@ -1,34 +1,17 @@
-import os
-import time
+from simple_term_menu import TerminalMenu
 
-def clean_screen():
-    os.system('cls' if os.name == 'nt' else 'clear')
-
-options = ["Сканировать URL", "Проверка с использованием VirusTotal", "Выход"]
-
-while True:
-        clean_screen()    
-        for i, option in enumerate(options, 1):
-            print(f"{i}. {option}")
-
-        choice = input(f"Выберите действие (1-{len(options)}): ").strip()
-        
-        if choice.isdigit() and 1 <= int(choice) <= len(options):
-            choice = int(choice)
-            selected = options[choice - 1]
-            clean_screen()
-            
-            if selected == "Сканировать URL":
-                print("asdasd")
-                input()
-            elif selected == "Проверка с использованием VirusTotal":
-                print("asdasd")
-                input
-            elif selected == "Выход":
-                print("Выход из программы")
-                time.sleep(0.5)
-                break
-        else:
-            clean_screen()
-            print("Неверный выбор! Попробуйте снова.")
-            input("\nНажмите Enter для продолжения...")
+main_menu_title = " Main Menu.\n Press Q or Esc to quit.\n"
+main_menu_items = ["Edit Menu", "Second Item", "Third Item", "Quit"]
+main_menu_cursor = "> "
+main_menu_cursor_style = ("fg_red", "bold")
+main_menu_style = ("bg_red", "fg_yellow")
+main_menu = TerminalMenu(
+    menu_entries=main_menu_items,
+    title=main_menu_title,
+    menu_cursor=main_menu_cursor,
+    menu_cursor_style=main_menu_cursor_style,
+    menu_highlight_style=main_menu_style,
+    cycle_cursor=True,
+    clear_screen=True
+)
+main_menu.show()
