@@ -9,7 +9,7 @@ import random
 import os
 
 console = Console()
-user = os.getenv('VAR2')
+user = os.getenv('VAR1')
 word = ["good", "beautiful", "productive", "busy", "warm", "cheerful", "chill"]
 current_time = datetime.now()
 hours = current_time.hour
