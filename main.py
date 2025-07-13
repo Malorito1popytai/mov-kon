@@ -16,7 +16,7 @@ console = Console()
 questions = [
   inquirer.List('menu',
   message="What do you want to choose?",
-  choices=['Weather now', 'Music', 'Exit'],
+  choices=['Weather now', 'Todo-cli', 'News', 'Exit'],
   ),
 ]
 
@@ -30,12 +30,15 @@ def main():
             input("\nНажмите Enter для продолжения...")
             clean_screen()
             hello_time(hours)
-        elif answers['menu'] == 'Music':
+        elif answers['menu'] == 'Todo-cli':
             print("asdasd")
+            input()
+        elif answers['menu'] == 'News':
+            print("Скоро")
             input()
         elif answers['menu'] == 'Exit':
             clean_screen()
-            console.print("\n[bold white]Выход из программы....[/bold white]")
+            console.print("[bold white]Выход из программы....[/bold white]")
             time.sleep(0.5)
             break
 
